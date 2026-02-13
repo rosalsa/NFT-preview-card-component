@@ -1,0 +1,160 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* CSS Variables based on Style Guide */
+:root {
+  --clr-soft-blue: hsl(215, 51%, 70%);
+  --clr-cyan: hsl(178, 100%, 50%);
+  --clr-main-bg: hsl(217, 54%, 11%);
+  --clr-card-bg: hsl(216, 50%, 16%);
+  --clr-line: hsl(215, 32%, 27%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+/* Reset and Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--clr-main-bg);
+  color: var(--clr-soft-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* Card Styling */
+.card {
+  background-color: var(--clr-card-bg);
+  max-width: 350px; /* Sesuai standar desain desktop/mobile */
+  padding: 24px;
+  border-radius: 15px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Hover Effect */
+.card__img-container {
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.card__main-img {
+  width: 100%;
+  display: block;
+}
+
+.card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(178, 100%, 50%, 0.5); /* Cyan with transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card__img-container:hover .card__overlay {
+  opacity: 1;
+}
+
+/* Typography */
+.card__title {
+  margin-top: 24px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card__title a {
+  color: var(--clr-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card__title a:hover {
+  color: var(--clr-cyan);
+}
+
+.card__description {
+  margin-top: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Stats Row */
+.card__stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card__price {
+  color: var(--clr-cyan);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card__time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card__divider {
+  border: none;
+  border-top: 1px solid var(--clr-line);
+  margin: 20px 0 16px;
+}
+
+/* Footer Section */
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+}
+
+.card__author img {
+  width: 33px;
+  height: 33px;
+  border: 1px solid var(--clr-white);
+  border-radius: 50%;
+}
+
+.card__author a {
+  color: var(--clr-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card__author a:hover {
+  color: var(--clr-cyan);
+}
+
+/* Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 24px;
+  color: var(--clr-soft-blue);
+}
+
+.attribution a {
+  color: var(--clr-white);
+}
